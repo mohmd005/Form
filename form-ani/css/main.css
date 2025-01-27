@@ -1,0 +1,297 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width: 55%;
+    height: 70%;
+    background-color: #fff;
+    border-radius: 20px;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px #b0b0b0;
+}
+
+.main.active .sign-in{
+    transform: translateX(-100%);
+}
+
+.main.active .sign-up{
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+    transition: .4s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+} 
+
+.main .sign-in,
+.main .sign-up {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    transition: .4s;
+}
+.main .title {
+    font-size: 30px;
+    color: #000;
+    letter-spacing: 1px;
+    margin: 20px 0 10px 0;
+    padding: 0;
+    margin: 0;
+}
+
+.main .p-title {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.main .social {
+    display: flex;
+    gap: 30px;
+    margin:  0 auto 5px auto;
+}
+
+.main .social a {
+    font-size: 22px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
+.main .fa-facebook {
+    color: #077bff;
+}
+
+.main .fa-twitter {
+    color: #07c9ff;
+}
+
+.main .line {
+    position: relative;
+    width: 150px;
+    margin: 0 auto 20px auto;
+}
+
+.main .or {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.main .or::before {
+    content: "";
+    width: 75px;
+    height: 1px;
+    background-color: #666;
+    position: absolute;
+    top: 50%;
+    left: -15px;
+}
+
+.main .or::after {
+    content: "";
+    width: 75px;
+    height: 1px;
+    background-color: #666;
+    position: absolute;
+    top: 50%;
+    right: -15px;
+}
+
+.main .input-box {
+    max-width: 300px;
+    width: 100%;
+    background-color: #f0f0f0;
+    margin: 0 auto 15px auto;
+    border: 1px solid #666;
+    border-radius: 55px;
+    position: relative;
+    display: flex;
+}
+
+.main .input-box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 25px;
+    font-size: 18px;
+}
+
+.main .input-box input {
+    background: none;
+    outline: none;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+    padding: 10px 15px;
+}
+
+.main .checkbox {
+    margin-bottom: 15px;
+}
+
+.main label {
+    font-size: 12px;
+    color: #222;
+}
+
+.main .forgot {
+    font-size: 12px;
+    color: #666;
+    margin-left: 30px;
+}
+
+.main .input-submit {
+    max-width: 300px;
+    width: 100%;
+    color: white;
+    margin: 0 auto 15px auto;
+    border: 1px solid #666;
+    border-radius: 55px;
+    position: relative;
+    padding: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    background-color: #077bff;
+}
+
+.main .go-sign-up {
+    font-size: 13px;
+    color: #666;
+}
+
+.main .sign-up {
+    color: #222;
+    font-size: 14px;
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    z-index: 1000;
+    padding: 15px;
+}
+
+.ani {
+    height: 100%;
+    background-color: #077bff;
+    border-radius: 20px;
+}
+
+.main.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 20px;
+}
+
+.toggle-container h1 {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.toggle-container p {
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.toggle-container button {
+    width: 150px;
+    height: 45px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: .9px;
+}
+
+.toggle{
+    height: 90%;
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.main.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.main.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.main.active .toggle-right{
+    transform: translateX(200%);
+}
